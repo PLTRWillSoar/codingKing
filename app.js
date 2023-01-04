@@ -1,9 +1,13 @@
-const h1 = document.querySelector(".click h1");
-let count = 0;
+const loginInput = document.querySelector("#login-form input");
+const loginbutton = document.querySelector("#login-form button");
 
-function handleTitleClick() {
-	count+=1;
-	h1.innerText= "Click: " + count;
+function loginBtnClick() {
+	const username = loginInput.value;
+	if (username === "") {
+		alert("Please write your name");
+	} else if (username.length > 15) {
+		alert("Your name is too long");
+	}
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginbutton.addEventListener("click", loginBtnClick);
